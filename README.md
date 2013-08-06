@@ -1,4 +1,4 @@
 tests
 =====
 
-testing repository
+testing repository - and modifying it
