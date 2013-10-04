@@ -9,7 +9,7 @@
     <%= csrf_meta_tags %>
 
     <!-- add title and favicon -->
-    <title>Ryan DeFord | <%= yield(:title) %></title>
+    <title><%= full_title(yield(:title)) %></title>
     <link rel="shortcut icon" href="http://www.cogmap.com/favicon.ico">
 
     <!-- add stylesheets -->
