@@ -1,14 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>RubyRailstutorialOrg</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <!-- add metadata jazz -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= csrf_meta_tags %>
 
-<%= yield %>
+    <!-- add title and favicon -->
+    <title>Ryan DeFord | <%= yield(:title) %></title>
+    <link rel="shortcut icon" href="http://www.cogmap.com/favicon.ico">
 
-</body>
+    <!-- add stylesheets -->
+    <link rel="stylesheet" href="/assets/bootstrap.min.css"> <!-- bootstrap core styles -->
+    <link rel="stylesheet" href="/assets/ryandeford.css"> <!-- ryandeford.com custom styles -->
+  </head>
+  <body>
+    <!-- this wraps up all body elements except the footer -->
+    <div id="wrapper">
+      <!-- the main site header (static for all pages) -->
+      <div id="main-header">
+        <img class="img-rounded" src="/assets/ryan_logo_small.jpg" alt="ryan_logo">
+        <h1>Ryan DeFord</h1>
+      </div>
+
+      <!-- the main site navigation (static for all pages - note: the "active" styling may differ) -->
+      <nav id="main-navbar" class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-links">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="navbar-links" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Music</a></li>
+            <li><a href="#">Fun to the Fun'th Power</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scrumptious Goodies <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Delicious Food Makes Me Moist</a></li>
+                <li><a href="#">Where in the World is Ryan Being Creepy?</a></li>
+                <li><a href="#">Thoughts, Tutorials, and People Who Suck a Giant Bag of Willies</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Find It</button>
+          </form>
+        </div>
+      </nav>
+
+      <!-- the main site content (dynamic across pages) -->
+      <div id="main-content">
+        <%= yield %>
+      </div>
+    </div>
+
+    <!-- the main site footer (static for all pages) -->
+    <div id="main-footer">
+      <nav>
+        <span>RyanDeFord.com <span class="glyphicon glyphicon-heart-empty"></span> 2013</span>
+        <ul class="list-inline">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Subscribe</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- add javascript files -->
+    <script src="/assets/jquery-2.0.3.min.js"></script> <!-- jquery core javascript -->
+    <script src="/assets/bootstrap.min.js"></script> <!-- bootstrap core javascript -->
+    <script src="/assets/ryandeford.js"></script> <!-- ryandeford.com custom javascript -->
+  </body>
 </html>
