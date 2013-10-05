@@ -30,10 +30,14 @@
       <%= render 'layouts/header' %> 
       <!-- the main site content (dynamic across pages) -->
       <div id="main-content" class="container">
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
         <%= yield %>
       </div>
 
       <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
  <!--   </div> -->
 
     <!-- the main site footer (static for all pages) -->
